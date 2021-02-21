@@ -11,8 +11,8 @@ import actions from "../../actions";
 // Components
 import Map from "../../components/Map/Map";
 import SlideBar from "../../components/SlideBar/SlideBar";
-import Loading from "../../components/Loading/Loading";
-import Error from "../../components/Error/Error";
+//import Loading from "../../components/Loading/Loading";
+//import Error from "../../components/Error/Error";
 
 // Icons
 import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
@@ -21,36 +21,36 @@ import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
 import "./Home.css";
 
 function Home({ parks, setParks }) {
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(false);
+  //const [isLoading, setIsLoading] = useState(true);
+  //const [error, setError] = useState(false);
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
 
-  useEffect(() => {
-    var obj = {
-      method: "GET",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/json",
-        Origin: "",
-      },
-    };
-    fetch("http://172.30.0.2/parks", obj)
-      .then((response) => response.json())
-      .then((data) => {
-        setParks(data);
-        setError(false);
-      })
-      .catch(() => setError(true));
-    setIsLoading(false);
-  }, []);
+  //useEffect(() => {
+  //  var obj = {
+  //    method: "GET",
+  //    mode: "no-cors",
+  //    headers: {
+  //      "Content-Type": "application/json",
+  //      Origin: "",
+  //    },
+  //  };
+  //  fetch("http://172.30.0.2/parks", obj)
+  //    .then((response) => response.json())
+  //    .then((data) => {
+  //      setParks(data);
+  //      setError(false);
+  //    })
+  //    .catch(() => setError(true));
+  //  setIsLoading(false);
+  //}, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  //if (isLoading) {
+  //  return <Loading />;
+  //}
 
   //if (error || !parks) {
   //  return <Error text="Something went wrong!" />;

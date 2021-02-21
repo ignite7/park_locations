@@ -5,11 +5,11 @@ import { createStore } from "redux";
 import reducer from "../reducers";
 
 // Parks
-//import parks from "../assets/parks";
+import parks from "../assets/parks";
 
 // Initial state
 const initialState = {
-  parks: [],
+  parks: parks,
   selectedPark: null,
 };
 
