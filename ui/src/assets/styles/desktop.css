@@ -1,0 +1,148 @@
+/* Desktop */
+@media (min-width: 800px) {
+  /* Base */
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  h3 {
+    font-size: 1.328rem;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+  /* Home */
+  .canvas {
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--background-color-slide-bar);
+  }
+  .canvas__map {
+    width: 75%;
+    order: 1;
+    transition-duration: 1s;
+    transition-property: width;
+  }
+  .canvas__map-element,
+  .canvas__map-loading {
+    width: 100%;
+    order: 1;
+  }
+  .canvas__slide-bar {
+    display: flex;
+    position: fixed;
+    width: 25%;
+    order: 2;
+    right: 0%;
+    transition-duration: 1s;
+    transition-property: right;
+  }
+  .toggle-btn {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    z-index: 1;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--hover);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    top: 50vh;
+    right: 24.2%;
+    transition-duration: 1s;
+    transition-property: right;
+  }
+  .toggle-btn__icon {
+    font-size: 2.5rem;
+    color: var(--font-color);
+  }
+  .toggle-btn:hover {
+    opacity: 0.9;
+  }
+  .canvas__map.active {
+    width: 100%;
+  }
+  .canvas__slide-bar.active {
+    right: -100%;
+  }
+  .toggle-btn.active {
+    right: 0%;
+  }
+
+  /* Search */
+  .search__text {
+    font-size: 1.6rem;
+  }
+  .search__text::placeholder {
+    font-size: 1.6rem;
+  }
+
+  /* Button */
+  .button__text {
+    font-size: 1.6rem;
+  }
+
+  /* Card */
+  .card {
+    margin-left: 3rem;
+    margin-right: 1.8rem;
+  }
+  .card__title {
+    font-size: 2.5rem;
+  }
+
+  /* Map */
+  .map__card-title {
+    font-size: 2.5rem;
+  }
+  .map__card-text {
+    font-size: 2.2rem;
+  }
+
+  /* Scroll Bar */
+  ::-webkit-scrollbar {
+    width: 1.2rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    box-shadow: inset 0 0 0.6rem rgba(0, 188, 102, 1);
+  }
+
+  /* Slide Bar */
+  .slide-bar__error {
+    font-size: 2.5rem;
+  }
+
+  /* Detail */
+  .detail {
+    width: 800px;
+  }
+  .detail__title {
+    display: inherit;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid var(--font-color);
+  }
+  .detail__items {
+    flex-direction: row;
+  }
+  .detail__map {
+    width: 50%;
+    margin-right: 2rem;
+    order: 1;
+  }
+  .detail__park {
+    flex-direction: column;
+    width: 50%;
+    order: 2;
+  }
+
+  /* Mini Map */
+  .mini-map {
+    height: auto;
+  }
+}

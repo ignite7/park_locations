@@ -1,0 +1,13 @@
+/* Error */
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error__text {
+  display: inherit;
+  text-align: center;
+  font-size: 1.4rem;
+}

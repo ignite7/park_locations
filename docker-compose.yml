@@ -1,0 +1,75 @@
+version: "3"
+
+services:
+  api:
+    container_name: api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    depends_on:
+      - db
+    expose:
+      - "9000"
+    networks:
+      - app-network
+    volumes:
+      - ./api:/var/www
+      - ./api/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+
+  ui:
+    container_name: ui
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    working_dir: /usr/src/park_locations/ui
+    depends_on:
+      - api
+    entrypoint: npm start
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"
+    volumes:
+      - ./ui:/usr/src/park_locations/ui
+
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - app-network
+    volumes:
+      - ./api:/var/www
+      - ./api/nginx/conf.d/:/etc/nginx/conf.d/
+
+  db:
+    image: yobasystems/alpine-mariadb
+    container_name: db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - app-network
+    volumes:
+      - ./api/storage/db:/var/lib/mysql
+      - ./api/storage/db/logs:/var/log/mysql
+      - ./api/mysql/my.cnf:/etc/mysql/my.cnf
+
+networks:
+  app-network:
+    driver: bridge

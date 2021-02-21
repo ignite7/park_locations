@@ -1,0 +1,54 @@
+/* Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --font-color: #262626;
+  --font-color-slide-bar: #a48c4f;
+  --background-color: white;
+  --background-color-slide-bar: #2b2b2b;
+  --hover: #00bc66;
+  --btn-external-link: #0d6efd;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Raleway-Regular.ttf");
+}
+
+body {
+  color: var(--font-color);
+  background-color: var(--background-color);
+  font-family: "Raleway";
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+.link {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}

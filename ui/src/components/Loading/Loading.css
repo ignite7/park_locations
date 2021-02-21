@@ -1,0 +1,16 @@
+/* Loading */
+.loading {
+  display: flex;
+  margin: 5rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  animation: loading 1s infinite;
+  will-change: transform;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
