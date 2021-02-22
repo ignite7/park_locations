@@ -1,17 +1,45 @@
 // React
-import React from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from "react";
+import {useParams} from "react-router-dom";
+
+// Axios
+import axios from "axios";
 
 // Components
 import MiniMap from "../../components/MiniMap/MiniMap";
 import Error from "../../components/Error/Error";
 import Button from "../../components/Button/Button";
+import Loading from "../../components/Loading/Loading";
 
 // Css
 import "./Detail.css";
 
-function Detail({ park }) {
-  if (!park) return <Error />;
+function Detail() {
+  const { id } = useParams()
+  const [park, setPark] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get(`http://172.20.0.3/parks/${id}`)
+      .then(({ data }) => {
+        setPark(data);
+        setError(false);
+      })
+      .catch(() => {
+        setError(true);
+      });
+    setIsLoading(false);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error || !park) {
+    return <Error text="Something went wrong!" />;
+  }
 
   return (
     <div className="detail">
@@ -37,8 +65,4 @@ function Detail({ park }) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  park: state.selectedPark,
-});
-
-export default connect(mapStateToProps, null)(Detail);
+export default Detail;

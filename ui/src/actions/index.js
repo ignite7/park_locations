@@ -1,6 +1,7 @@
 // Actions
-const setParks = (payload) => ({
-  type: "SET_PARKS",
+const setPark = (payload) => ({
+  type: "SET_PARK",
+  payload,
 });
 
 const setSelectedPark = (payload) => ({
@@ -14,7 +15,7 @@ const setFilterParks = (payload) => ({
 });
 
 const actions = {
-  setParks,
+  setPark,
   setSelectedPark,
   setFilterParks,
 };
