@@ -1,6 +1,6 @@
 // React
 import React, { useEffect, useState } from "react";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 // Axios
 import axios from "axios";
@@ -15,16 +15,16 @@ import Loading from "../../components/Loading/Loading";
 import "./Detail.css";
 
 function Detail() {
-  const { id } = useParams()
+  const { id } = useParams();
   const [park, setPark] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_LARAVEL}/parks/${id}`)
+      .get(`http://172.24.0.2/api/v1/parks/${id}`)
       .then(({ data }) => {
-        setPark(data);
+        setPark(data.data);
         setError(false);
       })
       .catch(() => {

@@ -1,15 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
+// Route
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+// Endpoints
+Route::apiResource(
+    "v1/parks",
+    App\Http\Controllers\Api\V1\ParkController::class
+)->only(["index", "show"]);

@@ -31,9 +31,9 @@ function Home({ parks, setPark }) {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_LARAVEL}/parks`)
+      .get(`http://172.24.0.2/api/v1/parks`)
       .then(({ data }) => {
-        setPark(data);
+        setPark(data.data);
         setError(false);
       })
       .catch(() => {

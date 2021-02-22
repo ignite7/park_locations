@@ -10,6 +10,11 @@ class Park extends Model
     use HasFactory;
 
     protected $casts = [
-        'localization' => 'array'
+        "localization" => "array",
     ];
+
+    public function getPublishedAtAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
 }
