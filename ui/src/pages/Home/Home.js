@@ -31,7 +31,7 @@ function Home({ parks, setPark }) {
 
   useEffect(() => {
     axios
-      .get("http://172.20.0.3/parks")
+      .get(`${process.env.REACT_APP_LARAVEL}/parks`)
       .then(({ data }) => {
         setPark(data);
         setError(false);

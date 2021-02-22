@@ -22,7 +22,7 @@ function Detail() {
 
   useEffect(() => {
     axios
-      .get(`http://172.20.0.3/parks/${id}`)
+      .get(`${process.env.REACT_APP_LARAVEL}/parks/${id}`)
       .then(({ data }) => {
         setPark(data);
         setError(false);
