@@ -20,6 +20,7 @@ class ParkResource extends JsonResource
             "localization" => $this->localization,
             "description" => $this->description,
             "created_at" => $this->published_at,
+            "type" => "resource"
         ];
     }
 }

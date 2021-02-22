@@ -10,6 +10,7 @@ use App\Models\Park;
 
 // Resources
 use App\Http\Resources\V1\ParkResource;
+use App\Http\Resources\V1\ParkCollection;
 
 class ParkController extends Controller
 {
@@ -20,7 +21,7 @@ class ParkController extends Controller
      */
     public function index()
     {
-        return ParkResource::collection(Park::all());
+        return new ParkCollection(Park::all());
     }
 
     /**
