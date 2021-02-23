@@ -9,6 +9,8 @@ class Park extends Model
 {
     use HasFactory;
 
+    protected $fillable = ["name", "localization", "description", "url"];
+
     protected $casts = [
         "localization" => "array",
     ];
