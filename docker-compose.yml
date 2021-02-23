@@ -11,6 +11,7 @@ services:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
     working_dir: /var/www
+    entrypoint: sh entrypoints/api.sh
     depends_on:
       - db
     expose:

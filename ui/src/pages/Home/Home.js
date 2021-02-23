@@ -31,7 +31,9 @@ function Home({ parks, setPark }) {
 
   useEffect(() => {
     axios
-      .get(`http://172.24.0.2/api/v1/parks`)
+      .get(`${process.env.REACT_APP_LARAVEL}/parks`, {
+        headers: { "Content-Type": "application/json" },
+      })
       .then(({ data }) => {
         setPark(data.data);
         setError(false);
