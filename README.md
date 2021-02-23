@@ -8,36 +8,36 @@ filter them.
 
 You need to configure your `.env` files.
 
-- Path `/.env`
+- Path: `/.env`
 
-```env
-MYSQL_ROOT_PASSWORD={{ DB_PASSWORD }}
-MYSQL_DATABASE={{ DB_NAME }}
-```
+  ```env
+  MYSQL_ROOT_PASSWORD={{ DB_PASSWORD }}
+  MYSQL_DATABASE={{ DB_NAME }}
+  ```
 
-- Path `/ui/.env`
+- Path: `/ui/.env`
 
-```env
-REACT_APP_GOOGLE_KEY={{ GOOGLE_MAPS_API_KEY }}
-REACT_APP_LARAVEL=http://localhost:80/api/v1
-```
+  ```env
+  REACT_APP_GOOGLE_KEY={{ GOOGLE_MAPS_API_KEY }}
+  REACT_APP_LARAVEL=http://localhost:80/api/v1
+  ```
 
-- Path `/api/.env`
+- Path: `/api/.env`
 
-```env
-APP_NAME=Laravel
-APP_ENV=local
-APP_KEY={{ YOUR_LARAVEL_KEY }}
-APP_DEBUG=true
-APP_URL=http://localhost
+  ```env
+  APP_NAME=Laravel
+  APP_ENV=local
+  APP_KEY={{ YOUR_LARAVEL_KEY }}
+  APP_DEBUG=true
+  APP_URL=http://localhost
 
-DB_CONNECTION=mysql
-DB_HOST=db
-DB_PORT=3306
-DB_DATABASE={{ DB_NAME }}
-DB_USERNAME=root
-DB_PASSWORD={{ DB_PASSWORD }}
-```
+  DB_CONNECTION=mysql
+  DB_HOST=db
+  DB_PORT=3306
+  DB_DATABASE={{ DB_NAME }}
+  DB_USERNAME=root
+  DB_PASSWORD={{ DB_PASSWORD }}
+  ```
 
 It's important to know that you will need `docker-compose`.
 
