@@ -39,7 +39,7 @@ const options = {
 
 function Map({ parks, toggle, selectedPark, setSelectedPark }) {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_KEY_API,
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY,
   });
 
   if (loadError) return <Error text="Something went wrong." />;

@@ -33,7 +33,7 @@ const options = {
 
 function MiniMap({ park }) {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_KEY_API,
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY,
   });
   const [selectedPark, setSelectedPark] = useState(null);
 
