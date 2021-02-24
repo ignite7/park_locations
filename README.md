@@ -37,6 +37,8 @@ You need to configure your `.env` files.
   DB_DATABASE={{ DB_NAME }}
   DB_USERNAME=root
   DB_PASSWORD={{ DB_PASSWORD }}
+
+  REAL_DATA=true
   ```
 
 It's important to know that you will need `docker-compose`.

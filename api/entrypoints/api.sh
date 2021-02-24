@@ -3,5 +3,6 @@
 set -o errexit
 set -o nounset
 
-php artisan migrate:refresh --seed
+php artisan migrate:fresh
+php artisan db:seed --class=ParkSeeder
 php-fpm
