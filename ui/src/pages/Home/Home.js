@@ -23,7 +23,7 @@ import "./Home.css";
 function Home({ parks, setPark }) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   const handleToggle = () => {
     setToggle(!toggle);
