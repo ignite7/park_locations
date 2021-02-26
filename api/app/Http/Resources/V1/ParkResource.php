@@ -15,7 +15,7 @@ class ParkResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "id" => $this->id,
+            "id" => $this->slug,
             "name" => $this->name,
             "localization" => $this->localization,
             "description" => $this->description,

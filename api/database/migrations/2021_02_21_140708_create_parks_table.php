@@ -20,6 +20,7 @@ class CreateParksTable extends Migration
             $table->json("localization");
             $table->text("description");
             $table->string("url");
+            $table->string("slug")->unique();
         });
     }
 
