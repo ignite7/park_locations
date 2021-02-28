@@ -34,7 +34,7 @@ class ParkSeeder extends Seeder
                 ]);
             }
         } else {
-            Park::factory(20)->create();
+            Park::factory(30)->create();
         }
     }
 }

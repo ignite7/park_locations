@@ -28,7 +28,7 @@ class ParkFactory extends Factory
                 "lat" => $this->faker->latitude(),
                 "lng" => $this->faker->longitude(),
             ],
-            "description" => $this->faker->paragraph(),
+            "description" => $this->faker->text(1000),
             "url" => $this->faker->url(),
         ];
     }
