@@ -1,6 +1,6 @@
 /* Slide Bar */
 .slide-bar {
-  display: flex;
+  display: none;
   flex-direction: column;
   margin: 0 auto;
   width: 100%;

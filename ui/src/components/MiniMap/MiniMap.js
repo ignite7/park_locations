@@ -17,7 +17,7 @@ import Error from "../Error/Error";
 import mapStyle from "../../assets/map";
 
 // Images
-import mapIcon from "../../assets/images/logo.png";
+import mapIcon from "../../assets/images/map_logo.png";
 
 // Css
 import "./MiniMap.css";
@@ -26,7 +26,7 @@ import "./MiniMap.css";
 const options = {
   styles: mapStyle,
   disableDefaultUI: true,
-  maxZoom: 10,
+  maxZoom: 15,
   minZoom: 8,
   options: { zoomControl: true },
 };
@@ -68,7 +68,7 @@ function MiniMap({ park }) {
           }}
         >
           <div className="map__card">
-            <h1 className="map__card-title">{selectedPark.name}</h1>
+            <h1 className="map__card-title">{selectedPark.name},</h1>
             <h2 className="map__card-text">{selectedPark.localization.name}</h2>
           </div>
         </InfoWindow>

@@ -22,7 +22,7 @@ import Error from "../Error/Error";
 import mapStyle from "../../assets/map";
 
 // Images
-import mapIcon from "../../assets/images/logo.png";
+import mapIcon from "../../assets/images/map_logo.png";
 
 // Css
 import "./Map.css";
@@ -31,10 +31,10 @@ import "./Map.css";
 const center = { lat: 33.19485288610493, lng: -38.462269425781216 };
 const options = {
   styles: mapStyle,
-  streetViewControl: false,
-  mapTypeControl: false,
-  maxZoom: 8,
+  disableDefaultUI: true,
+  maxZoom: 10,
   minZoom: 3,
+  options: { zoomControl: true },
 };
 
 function Map({ parks, toggle, selectedPark, setSelectedPark }) {
@@ -52,6 +52,9 @@ function Map({ parks, toggle, selectedPark, setSelectedPark }) {
       center={center}
       options={options}
     >
+      <div className={toggle ? "map__title active" : "map__title"}>
+        <h1>Airparx in +30 countries</h1>
+      </div>
       {parks.map((park) => (
         <Marker
           key={park.id}
@@ -76,7 +79,7 @@ function Map({ parks, toggle, selectedPark, setSelectedPark }) {
           }}
         >
           <div className="map__card">
-            <h1 className="map__card-title">{selectedPark.name}</h1>
+            <h1 className="map__card-title">{selectedPark.name},</h1>
             <h2 className="map__card-text">{selectedPark.localization.name}</h2>
             <Button text="More info" to={`/${selectedPark.id}`} />
           </div>

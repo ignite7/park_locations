@@ -112,6 +112,9 @@
   }
 
   /* Slide Bar */
+  .slide-bar {
+    display: flex;
+  }
   .slide-bar__error {
     font-size: 2.5rem;
   }
@@ -144,5 +147,13 @@
   /* Mini Map */
   .mini-map {
     height: auto;
+  }
+
+  /* Map Title */
+  .map__title {
+    top: 2.5vw;
+  }
+  .map__title.active {
+    left: 42.5vw;
   }
 }
