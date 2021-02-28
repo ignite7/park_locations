@@ -11,6 +11,7 @@ import {
   useLoadScript,
   Marker,
   InfoWindow,
+  MarkerClusterer,
 } from "@react-google-maps/api";
 
 // Components
@@ -55,19 +56,24 @@ function Map({ parks, toggle, selectedPark, setSelectedPark }) {
       <div className={toggle ? "map__title active" : "map__title"}>
         <h1>Airparx in +30 countries</h1>
       </div>
-      {parks.map((park) => (
-        <Marker
-          key={park.id}
-          position={{ lat: park.localization.lat, lng: park.localization.lng }}
-          icon={{
-            url: mapIcon,
-            scaledSize: new window.google.maps.Size(30, 30),
-          }}
-          onClick={() => {
-            setSelectedPark(park);
-          }}
-        />
-      ))}
+      <MarkerClusterer>
+        {(clusterer) =>
+          parks.map((park) => (
+            <Marker
+              key={park.id}
+              position={park.localization}
+              clusterer={clusterer}
+              icon={{
+                url: mapIcon,
+                scaledSize: new window.google.maps.Size(30, 30),
+              }}
+              onClick={() => {
+                setSelectedPark(park);
+              }}
+            />
+          ))
+        }
+      </MarkerClusterer>
       {selectedPark && (
         <InfoWindow
           position={{
