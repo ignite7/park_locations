@@ -9,12 +9,13 @@ import actions from "../../actions";
 import Button from "../Button/Button";
 
 // Css
-import './Card.css'
+import "./Card.css";
 
-function Card({ park , setSelectedPark }) {
+function Card({ park, setSelectedPark }) {
   return (
     <div
       className="card"
+      aria-hidden="true"
       onClick={() => {
         setSelectedPark(park);
       }}

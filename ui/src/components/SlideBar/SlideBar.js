@@ -19,11 +19,11 @@ function SlideBar({ parks }) {
 
   const filteredParks = useMemo(
     () =>
-      parks.filter((park) => {
-        return `${park.name}, ${park.localization.name}`
+      parks.filter((park) =>
+        `${park.name}, ${park.localization.name}`
           .toLowerCase()
-          .includes(search.toLowerCase());
-      }),
+          .includes(search.toLowerCase())
+      ),
     [parks, search]
   );
 

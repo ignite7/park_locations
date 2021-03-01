@@ -32,7 +32,7 @@ services:
     working_dir: /usr/src/park_locations/ui
     depends_on:
       - api
-    entrypoint: npm start
+    entrypoint: npm run start:dev -- --host 0.0.0.0
     ports:
       - "3000:3000"
     expose:

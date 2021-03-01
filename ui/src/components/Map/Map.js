@@ -3,9 +3,6 @@ import React from "react";
 import { connect } from "react-redux";
 
 // Actions
-import actions from "../../actions";
-
-// Google Maps
 import {
   GoogleMap,
   useLoadScript,
@@ -13,6 +10,9 @@ import {
   InfoWindow,
   MarkerClusterer,
 } from "@react-google-maps/api";
+import actions from "../../actions";
+
+// Google Maps
 
 // Components
 import Button from "../Button/Button";
@@ -71,8 +71,7 @@ function Map({ parks, toggle, selectedPark, setSelectedPark }) {
                 setSelectedPark(park);
               }}
             />
-          ))
-        }
+          ))}
       </MarkerClusterer>
       {selectedPark && (
         <InfoWindow
@@ -85,7 +84,10 @@ function Map({ parks, toggle, selectedPark, setSelectedPark }) {
           }}
         >
           <div className="map__card">
-            <h1 className="map__card-title">{selectedPark.name},</h1>
+            <h1 className="map__card-title">
+              {selectedPark.name}
+              ,
+            </h1>
             <h2 className="map__card-text">{selectedPark.localization.name}</h2>
             <Button text="More info" to={`/${selectedPark.id}`} />
           </div>

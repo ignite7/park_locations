@@ -10,8 +10,8 @@ import App from "./components/App";
 import store from "./context";
 
 // Css
-import "./assets/styles/mobile.css"
-import "./assets/styles/desktop.css"
+import "./assets/styles/mobile.css";
+import "./assets/styles/desktop.css";
 
 // DOM
 ReactDOM.render(

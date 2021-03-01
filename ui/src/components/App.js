@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Components
 import Layout from "./Layout";
-import Error from "../components/Error/Error"
+import Error from "./Error/Error";
 
 // Pages
 import Home from "../pages/Home/Home";

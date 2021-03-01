@@ -68,7 +68,10 @@ function MiniMap({ park }) {
           }}
         >
           <div className="map__card">
-            <h1 className="map__card-title">{selectedPark.name},</h1>
+            <h1 className="map__card-title">
+              {selectedPark.name}
+              ,
+            </h1>
             <h2 className="map__card-text">{selectedPark.localization.name}</h2>
           </div>
         </InfoWindow>

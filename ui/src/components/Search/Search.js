@@ -2,7 +2,7 @@
 import React from "react";
 
 // Css
-import "./Search.css"
+import "./Search.css";
 
 function Search({ search, searchInput, handleSearch }) {
   return (

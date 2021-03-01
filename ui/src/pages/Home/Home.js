@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 
 // Actions
+import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
 import actions from "../../actions";
 
 // Components
@@ -15,7 +16,6 @@ import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 
 // Icons
-import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
 
 // Css
 import "./Home.css";
@@ -56,6 +56,7 @@ function Home({ parks, setPark }) {
     <div className="canvas">
       <Map toggle={toggle} parks={parks} />
       <div
+        aria-hidden="true"
         className={toggle ? "toggle-btn active" : "toggle-btn"}
         onClick={handleToggle}
       >
