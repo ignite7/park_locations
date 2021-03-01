@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dist": "rm -rf ~/projects/park_locations/dist/",
+    "dist": "rm -rf ~/projects/park_locations/ui/dist/",
     "build:dll": "webpack --config ./webpack.dll.config.js",
     "build:dev": "webpack --config ./webpack.dev.config.js",
     "build:prod": "webpack --config ./webpack.prod.config.js",
