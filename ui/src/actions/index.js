@@ -14,10 +14,16 @@ const setFilterParks = (payload) => ({
   payload,
 });
 
+const setToggle = (payload) => ({
+  type: "SET_TOGGLE",
+  payload,
+});
+
 const actions = {
   setPark,
   setSelectedPark,
   setFilterParks,
+  setToggle,
 };
 
 export default actions;

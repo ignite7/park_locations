@@ -7,6 +7,8 @@ const reducer = (state, action) => {
       return { ...state, selectedPark: action.payload };
     case "SET_FILTER_PARKS":
       return { ...state, filterParks: action.payload };
+    case "SET_TOGGLE":
+      return { ...state, toggle: action.payload };
     default:
       return state;
   }

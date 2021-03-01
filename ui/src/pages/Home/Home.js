@@ -15,19 +15,12 @@ import SlideBar from "../../components/SlideBar/SlideBar";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 
-// Icons
-
 // Css
 import "./Home.css";
 
-function Home({ parks, setPark }) {
+function Home({ parks, setPark, toggle, setToggle }) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [toggle, setToggle] = useState(true);
-
-  const handleToggle = () => {
-    setToggle(!toggle);
-  };
 
   useEffect(() => {
     axios
@@ -58,7 +51,7 @@ function Home({ parks, setPark }) {
       <div
         aria-hidden="true"
         className={toggle ? "toggle-btn active" : "toggle-btn"}
-        onClick={handleToggle}
+        onClick={() => setToggle(!toggle)}
       >
         {toggle ? (
           <BsArrowBarLeft className="toggle-btn__icon" />
@@ -69,7 +62,7 @@ function Home({ parks, setPark }) {
       <div
         className={toggle ? "canvas__slide-bar active" : "canvas__slide-bar"}
       >
-        <SlideBar parks={parks} handleToggle={handleToggle} />
+        <SlideBar parks={parks} />
       </div>
     </div>
   );
@@ -77,10 +70,12 @@ function Home({ parks, setPark }) {
 
 const mapStateToProps = (state) => ({
   parks: state.parks,
+  toggle: state.toggle,
 });
 
 const mapDispatchToProps = {
   setPark: actions.setPark,
+  setToggle: actions.setToggle,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

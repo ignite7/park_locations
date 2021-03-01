@@ -41,14 +41,11 @@ You need to configure your `.env` files.
   REAL_DATA=true
   ```
 
-It's important to know that you will need `docker-compose`.
+It's important to know that you will need `docker-compose`, `npm` and
+`composer`.
 
 ```bash
-# Build the image
-sh entrypoints/build.sh
-
-# Run docker compose
-docker-compose up -d
+sh entrypoints/setup.sh
 ```
 
 Then you will have the frontend and the backend running.

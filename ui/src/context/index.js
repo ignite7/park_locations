@@ -11,6 +11,7 @@ import reducer from "../reducers";
 const initialState = {
   parks: [],
   selectedPark: null,
+  toggle: true,
 };
 
 // Store
