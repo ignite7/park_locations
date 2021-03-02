@@ -1,7 +1,12 @@
 FROM node:14.15-alpine
 
+# Set the workdir
 WORKDIR /usr/src/park_locations/ui
 
+# Copy everything from ui folder
 COPY . /usr/src/park_locations/ui
 
-RUN npm install --silent --no-progress --ignore-optional
+# Install packages and build DLL and DEV webpack
+RUN npm install --silent --no-progress --ignore-optional \
+  && npm run build:dll --silent --no-progress --ignore-optional \
+  && npm run build:dev --silent --no-progress --ignore-optional
