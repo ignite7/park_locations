@@ -7,6 +7,4 @@ WORKDIR /usr/src/park_locations/ui
 COPY . /usr/src/park_locations/ui
 
 # Install packages and build DLL and DEV webpack
-RUN npm install --silent --no-progress --ignore-optional \
-  && npm run build:dll --silent --no-progress --ignore-optional \
-  && npm run build:dev --silent --no-progress --ignore-optional
+RUN npm install --silent --no-progress --ignore-optional

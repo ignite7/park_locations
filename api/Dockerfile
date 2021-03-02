@@ -45,6 +45,3 @@ COPY --chown=www:www . /var/www
 
 # Change current user to www
 USER www
-
-# Vendor
-RUN composer install -q

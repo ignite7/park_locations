@@ -4,5 +4,8 @@ set -o errexit
 set -o nounset
 
 sudo python3 entrypoints/delete_db.py
-docker-compose build
-docker-compose up -d
+npm install --prefix ui/
+npm run build:dll --prefix ui/
+npm run build:dev --prefix ui/
+composer install -d api/
+docker-compose up

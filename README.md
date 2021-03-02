@@ -41,7 +41,8 @@ You need to configure your `.env` files.
   REAL_DATA=true
   ```
 
-It's important to know that you will need `docker-compose`.
+It's important to know that you will need `docker-compose`, `npm` and
+`composer`.
 
 ```bash
 sh entrypoints/setup.sh
