@@ -11,7 +11,8 @@
     "start:dev": "webpack serve --config ./webpack.dev.config.js",
     "start:prod": "webpack serve --config ./webpack.prod.config.js",
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
-    "linter": "eslint src/ --fix"
+    "linter": "eslint src/ --fix",
+    "prettier": "npm run format && npm run linter"
   },
   "husky": {
     "hooks": {
